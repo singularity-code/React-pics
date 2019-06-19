@@ -1,6 +1,9 @@
 import React from "react";
 
+// Controlled Component, This will store all data in the app
+// Which is do not need to access DOM to get the data
 class SearchBar extends React.Component {
+  state = { term: "Search Here..." };
 
   render() {
     return (
@@ -8,7 +11,11 @@ class SearchBar extends React.Component {
         <form className="ui form">
           <div className="field">
             <label>Image Search</label>
-            <input type="text" onChange={e => console.log(e.target.value)} />
+            <input
+              type="text"
+              value={this.state.term}
+              onChange={e => this.setState({ term: e.target.value })}
+            />
           </div>
         </form>
       </div>
