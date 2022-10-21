@@ -3,12 +3,12 @@ import React from "react";
 // Controlled Component, This will store all data in the app
 // Which is do not need to access DOM to get the data
 class SearchBar extends React.Component {
-  state = { term: "" };
+  state = {term: ""};
 
   onFormSubmit = (event) => {
-      event.preventDefault();
-      this.props.onSubmit(this.state.term);
-  }
+    event.preventDefault();
+    this.props.onSubmit(this.state.term);
+  };
 
   render() {
     return (
@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
             <input
               type="text"
               value={this.state.term}
-              onChange={e => this.setState({ term: e.target.value.toUpperCase() })}
+              onChange={e => this.setState({term: e.target.value.toUpperCase()})}
             />
           </div>
         </form>
